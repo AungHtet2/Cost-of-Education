@@ -85,7 +85,7 @@ ORDER BY 2 DESC
 LIMIT 10;
 ```
 
-| Rank | Program                | Number of Entries | Avg. Tuition (USD) |
+| Rank | Program                | Counts | Avg. Tuition (USD) |
 |------|------------------------|-------------------|--------------------|
 | 1    | Computer Science       | 298               | $26,390.47         |
 | 2    | Data Science           | 76                | $18,125.39         |
