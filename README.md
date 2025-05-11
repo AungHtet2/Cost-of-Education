@@ -8,7 +8,7 @@
 
 1. #### Which country or city offers the most affordable education overall?
 
-2. #### What is the total cost of studying in each program (across the duration)?
+2. #### What are the most popular program and its cost?
 
 
 3. #### How do tuition fees compare between degree levels (Bachelor vs Master vs PhD)?
@@ -72,7 +72,31 @@ ORDER BY Total_Cost_USD DESC;
 | USA     | Los Angeles| UCLA                     | Computer Eng.     | PhD    | 5               | 52000       | 79.8              | 2200     | 160          | 1500          | 185660         |
 | USA     | Stanford   | Stanford University      | Computer Science  | Bachelor | 4              | 57000       | 95.2              | 2400     | 160          | 1500          | 173860         |
 
+## 2. What are most Popular Programs around the world and their average cost(USD)?
 
+```sql
+SELECT   DISTINCT(Program),
+        count(*) AS Program_counts,
+        ROUND(AVG(Tuition_USD),2) AS Avg_Tuition_cost_USD
+        
+FROM international_education_costs_copy
+GROUP BY Program
+ORDER BY 2 DESC
+LIMIT 10;
+```
+
+| Rank | Program                | Number of Entries | Avg. Tuition (USD) |
+|------|------------------------|-------------------|--------------------|
+| 1    | Computer Science       | 298               | $26,390.47         |
+| 2    | Data Science           | 76                | $18,125.39         |
+| 3    | Computer Engineering   | 62                | $11,220.65         |
+| 4    | Software Engineering   | 52                | $11,216.73         |
+| 5    | Artificial Intelligence| 51                | $13,401.18         |
+| 6    | Data Analytics         | 46                | $14,258.70         |
+| 7    | Information Systems    | 36                | $6,943.61          |
+| 8    | Information Technology | 22                | $8,686.36          |
+| 9    | Software Development   | 21                | $8,971.43          |
+| 10   | Data Engineering       | 19                | $8,313.68          |
 
 
 
