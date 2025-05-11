@@ -99,6 +99,28 @@ LIMIT 10;
 | 10   | Data Engineering       | 19                | $8,313.68          |
 
 
+# 4. How do tuition fees compare between degree levels (Bachelor vs Master vs PhD)?
+
+
+```sql
+SELECT 
+    Level,
+    COUNT(*) AS Program_Count,
+    ROUND(AVG(Tuition_USD), 2) AS Avg_Tuition_Per_Year_USD
+FROM international_education_costs_copy
+GROUP BY Level
+ORDER BY Avg_Tuition_Per_Year_USD DESC;
+```
+
+##  Average Tuition Fees by Degree Level
+
+| Degree Level | Number of Programs | Avg Tuition per Year (USD) |
+|--------------|--------------------|-----------------------------|
+| Bachelor     | 274                | $21,454.12                  |
+| PhD          | 141                | $19,316.31                  |
+| Master       | 389                | $16,836.56                  |
+
+
 
 
 
