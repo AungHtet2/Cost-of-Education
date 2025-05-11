@@ -30,4 +30,5 @@ SELECT *,
 
 FROM international_education_costs_copy
 WHERE Tuition_USD + (Rent_USD * 12 * Duration_Years) + Visa_Fee_USD + Insurance_USD >= 30000
-ORDER BY Total_Cost_USD DESC;
+ORDER BY Total_Cost_USD DESC
+LIMIT 10;
